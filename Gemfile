@@ -13,6 +13,7 @@ group :test do
 	gem 'capybara'
 	gem 'rspec'
 	gem 'cucumber-sinatra'
+	gem 'cucumber'
 end
 
 

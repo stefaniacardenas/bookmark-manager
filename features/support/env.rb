@@ -17,5 +17,5 @@ class BookmarkManager
 end
 
 World do
-  BookmarkManagerWorld.new
+  BookmarkManager.new
 end
