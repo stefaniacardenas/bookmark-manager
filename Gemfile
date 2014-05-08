@@ -3,7 +3,7 @@ source 'https//rubygems.org'
 ruby '2.1.1'
 
 gem 'sinatra'
-gem 'data_mapper' #it talks ot the database
+gem 'data_mapper' #it talks to the database
 gem 'dm-postgres-adapter' #helper for postgres SQL 
 
 
