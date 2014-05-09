@@ -6,7 +6,7 @@ Feature: Bookmark Manager Home Page
 
 Scenario:
 	Given a user visits the home page
-  Then the user should find button "Click to add your link!"
+  Then the user should find button "Click to get started!"
 
 Scenario:
 	Given we have a link bookmarked
