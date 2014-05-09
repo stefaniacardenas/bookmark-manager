@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'sinatra'
-gem 'data_mapper' #it talks to the database
-gem 'dm-postgres-adapter' #helper for postgres SQL 
+gem 'data_mapper' #it helps us interacting with the database without working with tables directly
+gem 'dm-postgres-adapter' #adaptor to make datamapper work with postgres SQL 
 
 
 group :development, :test do #you need shotgun for both development and testing
@@ -14,6 +14,8 @@ group :test do
 	gem 'rspec'
 	gem 'cucumber-sinatra'
 	gem 'cucumber'
+	gem 'database_cleaner'
+	gem "launchy"
 end
 
 

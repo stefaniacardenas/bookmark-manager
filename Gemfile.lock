@@ -32,6 +32,7 @@ GEM
       dm-validations (~> 1.2.0)
     data_objects (0.10.14)
       addressable (~> 2.1)
+    database_cleaner (1.2.0)
     diff-lcs (1.2.5)
     dm-aggregates (1.2.0)
       dm-core (~> 1.2.0)
@@ -76,6 +77,8 @@ GEM
     highline (1.6.21)
     json (1.8.1)
     json_pure (1.8.1)
+    launchy (2.4.2)
+      addressable (~> 2.3)
     mime-types (2.2)
     mini_portile (0.5.3)
     multi_json (1.10.0)
@@ -119,7 +122,9 @@ DEPENDENCIES
   cucumber
   cucumber-sinatra
   data_mapper
+  database_cleaner
   dm-postgres-adapter
+  launchy
   rspec
   shotgun
   sinatra

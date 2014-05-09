@@ -6,4 +6,9 @@ Feature: Bookmark Manager Home Page
 
 Scenario:
 	Given a user visits the home page
-  Then the user should find an add button
+  Then the user should find button "Click to add your link!"
+
+Scenario:
+	Given we have a link bookmarked
+	When on the homepage
+	Then we should see the link title is FaceBook
