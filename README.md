@@ -1,7 +1,8 @@
 #Bookmark Manager
 ==================
 
-This is my sixth week project at Makers Academy. 
+This is my sixth week project at Makers Academy.
+
 It's a bookmark manager that allows you to save your favourite webpages' URLs. 
 
 How it works
@@ -12,14 +13,15 @@ Just click on the 'Get started' button, login and start saving your links.
 Technologies used
 -----------
 For the completion of this project I used the following technologies:
-*Ruby
-*Sinatra
-*Capybara
-*Cucumber
-*Postgres
-*Datamapper
-*HTML5
-*CSS3
+
+* Ruby
+* Sinatra
+* Capybara
+* Cucumber
+* Postgres
+* Datamapper
+* HTML5
+* CSS3
 
 About Makers Academy
 -----------
