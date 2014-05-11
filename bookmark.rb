@@ -11,6 +11,7 @@ DataMapper.setup(:default, "postgres://localhost/bookmark_manager_#{env}")
 
 require './lib/link.rb'
 # We require Link after datamapper is initialized
+require './lib/add_link.rb'
 
 DataMapper.finalize # check the models for consistency
 DataMapper.auto_upgrade! #this is telling the database to create the tables
@@ -22,6 +23,15 @@ class BookmarkManager < Sinatra::Base
   	@links = Link.all
   	erb :index
   end
+
+  get '/add_link' do
+    erb :index
+  end
+
+  post '/add_link' do
+    erb :add_link
+  end
+
 
  #  post '/links' do
 	#   url = params["url"]

@@ -19,3 +19,11 @@ Then(/^we should see the link title is FaceBook$/) do
 	link = Link.first
 	expect(link.title).to eq('FaceBook')
 end
+
+When(/^clicking on the button "(.*?)"$/) do |button_text|
+	click_button(button_text)
+end
+
+Then(/^should be able to visit the add_link page$/) do
+	visit path_to('/add_link')
+end

@@ -22,7 +22,10 @@ World do
 end
 
 
-DatabaseCleaner.strategy = :truncation
+DatabaseCleaner.strategy = :transaction
+DatabaseCleaner.clean_with(:truncation) 
+# do I need both?
+
 
 Before do
   DatabaseCleaner.start  
