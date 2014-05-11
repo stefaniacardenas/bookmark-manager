@@ -16,6 +16,12 @@ module NavigationHelpers
     when /add_link/
       '/add_link'
 
+    when /register/
+      '/register'
+
+    when /sign in/
+      '/sign_in'
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

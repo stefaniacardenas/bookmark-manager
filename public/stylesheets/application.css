@@ -1,18 +1,43 @@
 body {
-	margin:	20% ;
 	text-align: center;
-	font-family: Impact, Charcoal, sans-serif;
-	font-size: 20px;
+	font-family: Helvetica Narrow, sans-serif;
+	font-weight: lighter;
 }
 
 h1 {
-	/*color: #551A8B*/;
+	margin: 2%;
+	text-align: left;
+	font-family: Impact, Charcoal, sans-serif;
+	font-size: 50px;
+}
+
+h2 {
+	text-align: left;
+	font-family: Helvetica Narrow, sans-serif;
+	font-weight: lighter;
+	margin: 2%
+}
+
+h3 {
+display: inline block;
+font-weight: normal;
+position: absolute;
+top: 2%;
+right: 5%;
+margin-right: 2%;
+}
+
+.wrapper {
+    text-align: center;
 }
 
 button {
 	background-color:  #7FFF00;
 	font-family: Tahoma, Geneva, sans-serif;
 	font-size: 20px;
-	margin: 5px;
 	width: 15em;  height: 3em;
+	position: absolute;
+  top: 50%;
+  left: 40%;
 }
+

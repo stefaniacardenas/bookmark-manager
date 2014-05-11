@@ -24,12 +24,16 @@ class BookmarkManager < Sinatra::Base
   	erb :index
   end
 
-  get '/add_link' do
-    erb :index
-  end
-
   post '/add_link' do
     erb :add_link
+  end
+
+  get '/register' do
+    erb :register
+  end
+
+  get '/sign_in' do 
+    erb :sign_in
   end
 
 
