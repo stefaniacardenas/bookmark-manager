@@ -5,5 +5,6 @@ Feature: User adds a new link
   I want to see an 'add new link' form
 
 Scenario:
-When browsing the homepage
-Then expect to see 'Makers Academy' bookmark
+	Given we have a new link bookmarked
+	When on the add_link page
+	Then we should see the content of the page is Makers Academy

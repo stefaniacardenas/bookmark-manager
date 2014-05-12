@@ -9,7 +9,6 @@ env = ENV["RACK_ENV"] || "development"
 # this is telling datamapper to use a postgres database on localhost
 
 DataMapper.setup(:default, "postgres://localhost/bookmark_manager_#{env}")
-DataMapper.setup(:default, "postgres://localhost/users_#{env}")
 # This is called a "connection string". It usually have this format "dbtype://user:password@hostname:port/databasename"
 # This is saying that the name of the database will be either "bookmark_manager_test" 
 # or "bookmark_manager_development" depending on the environment
@@ -30,15 +29,16 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/add_link' do
+    @links = Link.all
     erb :add_link
   end
 
   post '/add_link' do
     url = params["url"]
     title = params["title"]
-    Link.create(:url => url, :title => title)
-    redirect to('/')
-    erb :add_link
+    description = params["description"]
+    Link.create(:url => url, :title => title, :description => description)
+    redirect to('/add_link')
   end
 
   get '/register' do

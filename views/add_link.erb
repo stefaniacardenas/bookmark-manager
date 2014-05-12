@@ -8,20 +8,18 @@
 <body>
 </div id ="new-link">
 		<h2> Add Bookmarks </h2>
-			<form action="/links" method="post">
-			  Url: <input name="Url" type="text">
-			  Title: <input name="Title" type="text">
-			  Description: <input name="Description" type="text">
+			<form action="/add_link" method="post">
+			  Url: <input name="url" type="text">
+			  Title: <input name="title" type="text">
+			  Description: <input name="description" type="text">
 			  <input type="submit" value="Add link">
 			</form>
 	</div>
 	<div>
 			<h2> Current Bookmarks:</h2>
-		<ul>
-	  	<% @links.each do |link| %>
-	    	<li><a href="<%= link.url %>""<%= link.title %>""<%= link.description %>"</a></li>
-	  	<% end %>
-		</ul>
+			<% @links.each do |link| %>
+			<a href= "<%=link.url%>"> <%= link.title %> </a>
+			<%end%>
 </div>
 </body>
 </html>
