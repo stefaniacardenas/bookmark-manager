@@ -17,3 +17,11 @@ Scenario:
 	Given a user visits the home page
 	When clicking on the button "Click to get started!"
 	Then should be able to visit the add_link page
+
+Scenario:
+	Given the user clicks on the link "Join FlagGo!"
+  Then the user should be redirected to the registration page
+
+Scenario:
+	Given the user clicks on the link "Sign In"
+  Then the user should be redirected to the sign in page

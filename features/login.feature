@@ -5,9 +5,7 @@ Feature: Login and Registration
 	I want to register and login
 
 Scenario:
-	Given the user clicks on the link "Join FlagGo!"
-  Then the user should be redirected to the registration page
-
-Scenario:
-	Given the user clicks on the link "Sign In"
-  Then the user should be redirected to the sign in page
+	Given the user visits "Join FlagGo!"
+	When he create a new profile
+	Then we know his email is example@example.com
+	Then user signs up

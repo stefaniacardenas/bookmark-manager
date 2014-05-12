@@ -11,5 +11,6 @@ class Link
 	property :id, Serial #serial gives an auto-incremented id to every record
 	property :title, String
 	property :url, String
+	property :description, String
 
 end
