@@ -1,27 +1,38 @@
 <!DOCTYPE html> 
 <html>
+
 <head>
 	<title>FlagGo - Bookmark Manager</title>
 	<link href="/stylesheets/application.css" rel="stylesheet" type="text/css">
 </head>
-<header>
-   <div id="left" style="float:left;width:50%;"> 
-   		<h1>FlagGo!</h1> 
-   </div>
-   <div id="right" style="float:right;width:10%;"> 
-	   	<h3>
-	   		<a href="/register" style="margin-right:30px">Join FlagGo!</a>
+
+	<header>
+
+	  <div id="left" style="float:left;width:50%;"> 
+	   	<h1 class="logo">FlagGo!</h1> 
+	  </div>
+
+ 		<div id="right">
+ 			<nav>
+		 		<a href="/register" style="margin-right:30px">Join FlagGo!</a>
 				<a href="/sign_in">Sign In</a>
-			</h3>
+			</nav>
 		</div>
-		<div id="text" style="float:center;width:40%">
+
+	</header>
+
+	<body>
+
+	<section class="intro">
+		<div class="intro-item">
 		<h2>FlagGo is the easiest way to manage your favourite links and webpages</h2>
 		</div>
-</header>
-<body>
-	<div class="wrapper">
-    <a href="/add_link"><button class="button1" >Click to get started!</button>
-    <form action ="/add_link"> <method='post'> </form>
-	</div>		
-</body>
+
+		<div id="wrapper">
+  		<a href="/add_link"><button class="button1" >Click to get started!</button>
+  		<form action ="/add_link"> <method='post'> </form>
+		</div>
+	</section>
+			
+	</body>
 </html>

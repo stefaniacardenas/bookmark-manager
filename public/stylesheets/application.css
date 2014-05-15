@@ -1,22 +1,33 @@
-body {
-	text-align: center;
-	font-family: Helvetica Narrow, sans-serif;
-	font-weight: lighter;
-}
-
-h1 {
+.logo {
 	margin: 2%;
 	text-align: left;
 	font-family: Impact, Charcoal, sans-serif;
 	font-size: 50px;
 }
 
-h2 {
-	text-align: left;
+nav a {
+	margin: 5%;
 	font-family: Helvetica Narrow, sans-serif;
 	font-weight: lighter;
-	margin: 2%
 }
+
+#right {
+	display: flex;
+	height: 200px;
+}
+
+.intro {
+	display: flex;
+	height: 200px;
+	}
+
+.intro-item {
+	margin: 2%;
+	text-align: left;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 20px;
+}
+
 
 h3 {
 display: inline block;
@@ -26,7 +37,7 @@ right: 5%;
 margin-right: 2%;
 }
 
-.wrapper {
+#wrapper {
     text-align: center;
    	position: absolute;
    	top: 50%;
@@ -40,4 +51,3 @@ button {
 	width: 15em;  height: 3em;
 
 }
-
