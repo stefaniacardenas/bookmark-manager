@@ -1,5 +1,6 @@
-Given(/^we have a new link bookmarked$/) do
+Given(/^a bookmark on the add link page$/) do
  	Link.create(:url => "http://www.makersacademy.com", :title => 'Makers Academy')
+	visit '/add_link'
 end
 
 When(/^on the add_link page$/) do
@@ -10,39 +11,15 @@ Then(/^we should see the content of the page is Makers Academy$/) do
 	page.should have_content('Makers Academy')
 end
 
+When(/^the user clicks on a bookmark$/) do
+	click_link('Makers Academy')
+end
 
-# When(/^browsing the homepage$/) do
-# 	visit '/'
-# end
+Then(/^he should be redirected to Makers Academy website$/) do
+  expect(current_url).to eq 'http://www.makersacademy.com/'
+end
 
-# Then(/^expect to see 'Makers Academy' bookmark$/) do 
-# 	def add_link(url, title)
-# 		within('#new-link') do
-# 			fill_in 'url', :with => url
-# 			fill_in 'title', :with => title
-# 			click_button 'Add link'
-# 		end
-# 			add_link("http://www.makersacademy.com/", "Makers Academy")
-# 	    expect(Link.count).to eq(1)
-# 	    link = Link.first
-# 	    expect(link.url).to eq("http://www.makersacademy.com/")
-# 	    expect(link.title).to eq("Makers Academy")
-# 	  end   
-# end
+Then(/^he should have a tag associated with the link$/) do
+  pending # express the regexp above with the code you wish you had
+end
 
-
-
-
-
-#     expect(Link.count).to eq(0)
-#     visit '/'
-#     add_link("http://www.makersacademy.com/", "Makers Academy")
-#     expect(Link.count).to eq(1)
-#     link = Link.first
-#     expect(link.url).to eq("http://www.makersacademy.com/")
-#     expect(link.title).to eq("Makers Academy")
-#   end
-
-#   
-#   end
-# end

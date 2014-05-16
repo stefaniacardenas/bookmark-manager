@@ -1,4 +1,3 @@
-
 Given(/^a user visits the home page$/) do
 	visit '/'
 end

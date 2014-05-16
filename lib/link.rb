@@ -12,5 +12,14 @@ class Link
 	property :title, String
 	property :url, String
 	property :description, String
+	has n, :tags, :through => Resource
+
+	before :save do 
+		if @url.include?('http://') == false
+			@url = "http://" + @url
+		end
+	end
+
+
 
 end
