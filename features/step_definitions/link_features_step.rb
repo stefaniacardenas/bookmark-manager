@@ -19,7 +19,13 @@ Then(/^he should be redirected to Makers Academy website$/) do
   expect(current_url).to eq 'http://www.makersacademy.com/'
 end
 
-Then(/^he should have a tag associated with the link$/) do
-  pending # express the regexp above with the code you wish you had
+Given(/^a bookmark with tags is added on the add link page$/) do
+	tag = Tag.new(text: 'Networking')
+	Link.create(:url => "http://www.linkedin.com", :title => 'LinkedIn', :tags => [tag])
+	visit '/add_link'
+end
+
+Then(/^it should have 'Networking' in the content$/) do
+	page.should have_content('Networking')
 end
 

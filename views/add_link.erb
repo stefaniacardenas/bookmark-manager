@@ -11,7 +11,7 @@
 			<form action="/add_link" method="post">
 			  Url: <input name="url" type="text">
 			  Title: <input name="title" type="text">
-			  Description: <input name="description" type="text">
+			  Tags: <input name="tags" type="text">
 			  <input type="submit" value="Add link">
 			</form>
 	</div>
@@ -19,6 +19,7 @@
 			<h2> Current Bookmarks:</h2>
 			<% @links.each do |link| %>
 			<a href= "<%=link.url%>"> <%= link.title %> </a>
+			<%= link.tags.map(&:text)%>
 			<%end%>
 </div>
 </body>

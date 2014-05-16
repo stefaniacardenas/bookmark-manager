@@ -15,8 +15,8 @@ Scenario:
 	Then he should be redirected to Makers Academy website
 
 Scenario:
-	Given a bookmark on the add link page
-	Then he should have a tag associated with the link
+	Given a bookmark with tags is added on the add link page
+	Then it should have 'Networking' in the content
 
 
 

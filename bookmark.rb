@@ -13,9 +13,10 @@ DataMapper.setup(:default, "postgres://localhost/bookmark_manager_#{env}")
 # This is saying that the name of the database will be either "bookmark_manager_test" 
 # or "bookmark_manager_development" depending on the environment
 
-require './lib/link.rb'
+require './lib/link'
 # We require Link after datamapper is initialized
-require './lib/user.rb'
+require './lib/user'
+require './lib/tag'
 
 DataMapper.finalize # check the models for consistency
 DataMapper.auto_upgrade! #this is telling the database to create the tables
@@ -36,10 +37,18 @@ class BookmarkManager < Sinatra::Base
   post '/add_link' do
     url = params["url"]
     title = params["title"]
-    description = params["description"]
-    Link.create(:url => url, :title => title, :description => description)
+    tags = params["tags"].split(" ").map do |tag|
+      Tag.first_or_create(:text => tag)
+    end 
+    Link.create(:url => url, :title => title, :tags => tags)
     redirect to('/add_link')
   end
+
+  get '/tags/:text' do
+  tag = Tag.first(:text => params[:text])
+  @links = tag ? tag.links : []
+  redirect to('/add_link')
+end
 
   get '/register' do
     @users = User.all
