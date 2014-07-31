@@ -19,7 +19,7 @@ require './lib/user'
 require './lib/tag'
 
 DataMapper.finalize # check the models for consistency
-DataMapper.auto_upgrade! #this is telling the database to create the tables
+# DataMapper.auto_upgrade! #this is telling the database to create the tables
 
 class BookmarkManager < Sinatra::Base
  
