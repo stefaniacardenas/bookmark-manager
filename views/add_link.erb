@@ -17,10 +17,12 @@
 	</div>
 	<div>
 			<h2> Current Bookmarks:</h2>
-			<% @links.each do |link| %>
-			<a href= "<%=link.url%>"> <%= link.title %> </a>
-			<%= link.tags.map(&:text)%>
-			<%end%>
+			<ul>
+				<% @links.each do |link| %>
+				<li><a href= "<%=link.url%>"> <%= link.title %> </a> </li>
+				<%= link.tags.map(&:text)%>
+				<%end%>
+			<ul>
 </div>
 </body>
 </html>
