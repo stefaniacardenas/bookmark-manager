@@ -3,11 +3,11 @@ Given(/^the user visits "(.*?)"$/) do |arg1|
 end
 
 When(/^he create a new profile$/) do
-	User.create(:email => "example@example.com", :password => 'apples3')
+	User.create(:username => "Charlie", :email => "example@example.com", :password => 'apples3')
 end
 
-Then(/^we know his email is example@example.com$/) do
-	user = User.first
+Then(/^we know his email is "(.*?)"$/) do |email|
+  user = User.first
 	expect(user.email).to eq('example@example.com')
 end
 

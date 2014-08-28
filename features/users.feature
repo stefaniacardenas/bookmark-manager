@@ -7,5 +7,7 @@ Feature: Login and Registration
 Scenario:
 	Given the user visits "Join FlagGo!"
 	When he create a new profile
-	Then we know his email is example@example.com
+	Then we know his email is "example@example.com"
 	Then user signs up
+
+Scenario:
