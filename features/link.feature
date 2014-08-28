@@ -5,17 +5,14 @@ Feature: User adds a new link
   I want to see an 'add new link' form
 
 Scenario:
-	Given a bookmark on the add link page
-	When on the add_link page
+	Given I am on the add_link page
+	And I add a bookmark
 	Then we should see the content of the page is Makers Academy
+	When I click on a link I should 
+	Then I should be redirected to Makers Academy website	
 
 Scenario:
-	Given a bookmark on the add link page
-	When the user clicks on a bookmark
-	Then he should be redirected to Makers Academy website
-
-Scenario:
-	Given a bookmark with tags is added on the add link page
+	Given a bookmark with tags is added
 	Then it should have 'Networking' in the content
 
 
