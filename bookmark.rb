@@ -45,10 +45,10 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/tags/:text' do
-  tag = Tag.first(:text => params[:text])
-  @links = tag ? tag.links : []
-  redirect to('/add_link')
-end
+    tag = Tag.first(:text => params[:text])
+    @links = tag ? tag.links : []
+    erb :add_link
+  end
 
   get '/register' do
     @users = User.all
@@ -68,11 +68,6 @@ end
     # session[:user_id] = user.id
     redirect to('/')
   end
-
-
-
-
-
 
   # start the server if ruby file executed directly
   run! if app_file == $0
