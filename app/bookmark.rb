@@ -1,20 +1,21 @@
-require 'sinatra/base'
-require 'data_mapper'
 require 'sinatra'
+require 'data_mapper'
 
-# enable :sessions
-# set :session_secret, 'super secret'
+require_relative 'helpers/application'
 
-env = ENV["RACK_ENV"] || "development"
+enable :sessions
+set :session_secret, "I hate sessions"
+
 # this is telling datamapper to use a postgres database on localhost
+env = ENV["RACK_ENV"] || "development"
 
-DataMapper.setup(:default, "postgres://localhost/bookmark_manager_#{env}")
 # This is called a "connection string". It usually have this format "dbtype://user:password@hostname:port/databasename"
 # This is saying that the name of the database will be either "bookmark_manager_test" 
 # or "bookmark_manager_development" depending on the environment
+DataMapper.setup(:default, "postgres://localhost/bookmark_manager_#{env}")
 
+# We require the model after datamapper is initialized
 require './lib/link'
-# We require Link after datamapper is initialized
 require './lib/user'
 require './lib/tag'
 
@@ -50,25 +51,22 @@ class BookmarkManager < Sinatra::Base
     erb :add_link
   end
 
-  get '/register' do
-    @users = User.all
-    erb :register
-  end
-
   get '/sign_in' do 
     erb :sign_in
   end
 
   get '/users/new' do
-    erb :"users/new"
+    erb :"register" , :layout => :layout
   end
 
   post '/users' do
-    User.create(:username => params[:username], :email => params[:email], :password => params[:password])
-    # session[:user_id] = user.id
+    user = User.create(:username => params[:username], :email => params[:email], :password => params[:password])
+    #this saves the user.id in the session after is created
+    session[:user_id] = user.id
     redirect to('/')
   end
 
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
+  
