@@ -3,8 +3,7 @@ require 'data_mapper'
 
 require_relative 'helpers/application'
 
-enable :sessions
-set :session_secret, "I hate sessions"
+
 
 # this is telling datamapper to use a postgres database on localhost
 env = ENV["RACK_ENV"] || "development"
@@ -23,7 +22,11 @@ DataMapper.finalize # check the models for consistency
 DataMapper.auto_upgrade! #this is telling the database to create the tables
 
 class BookmarkManager < Sinatra::Base
+
+  include ApplicationHelpers
  
+  set :session_secret, "I hate sessions"
+  enable :sessions
 
   get '/' do
   	@links = Link.all
